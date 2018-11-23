@@ -14,9 +14,8 @@ Summary: A simple method to select the best model or best subset of variables us
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-fwdselect-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-fwdselect-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-fwdselect-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-fwdselect-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-fwdselect-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-fwdselect-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-fwdselect-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-fwdselect-feedstock)
 
 Current release info
 ====================

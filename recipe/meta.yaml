@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = '2.1.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: FWDselect_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/FWDselect_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/FWDselect/FWDselect_{{ version }}.tar.gz
   sha256: e77313b3066806333edec3904d05e4fd51b596737edc337ba4019ecf609d1070
 
 build:
+  merge_build_host: True  # [win]
+  number: 1004
   noarch: generic
-  merge_build_host: true  # [win]
-  number: 1003
   rpaths:
     - lib/R/lib/
     - lib/
@@ -24,6 +23,7 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-cvtools
@@ -41,18 +41,34 @@ test:
 about:
   home: http://cran.r-project.org/package=FWDselect
   license: MIT
-  summary: A simple method to select the best model or best subset of variables using different types of data (binary, Gaussian or Poisson) and applying it in different contexts (parametric or non-parametric).
+  summary: A simple method to select the best model or best subset of variables using different
+    types of data (binary, Gaussian or Poisson) and applying it in different contexts
+    (parametric or non-parametric).
   license_family: MIT
-
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
     - LICENSE
+
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+
+# Package: FWDselect
+# Title: Selecting Variables in Regression Models
+# Version: 2.1.0
+# Date: 2015-12-18
+# Author: Marta Sestelo [aut, cre], Nora M. Villanueva [aut], Javier Roca-Pardinas [aut]
+# Maintainer: Marta Sestelo <sestelo@uvigo.es>
+# Authors@R: c( person("Marta", "Sestelo",email= "sestelo@uvigo.es", role = c("aut", "cre")), person("Nora", "M. Villanueva",email= "nmvillanueva@uvigo.es", role = "aut"), person("Javier", "Roca-Pardinas",email= "roca@uvigo.es", role = "aut"))
+# Description: A simple method to select the best model or best subset of variables using different types of data (binary, Gaussian or Poisson) and applying it in different contexts (parametric or non-parametric).
+# URL: http://cran.r-project.org/package=FWDselect
+# BugReports: http://github.com/sestelo/fwdselect/issues
+# Depends: R (>= 3.1.0)
+# License: MIT + file LICENSE
+# LazyData: true
+# Imports: cvTools, mgcv, parallel, graphics, stats
+# RoxygenNote: 5.0.0
+# NeedsCompilation: no
+# Packaged: 2015-12-18 18:21:53 UTC; Sestelo
+# Repository: CRAN
+# Date/Publication: 2015-12-19 09:34:15

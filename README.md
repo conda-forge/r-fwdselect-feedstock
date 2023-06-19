@@ -1,11 +1,11 @@
-About r-fwdselect
-=================
+About r-fwdselect-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fwdselect-feedstock/blob/main/LICENSE.txt)
 
 Home: http://cran.r-project.org/package=FWDselect
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fwdselect-feedstock/blob/main/LICENSE.txt)
 
 Summary: A simple method to select the best model or best subset of variables using different types of data (binary, Gaussian or Poisson) and applying it in different contexts (parametric or non-parametric).
 

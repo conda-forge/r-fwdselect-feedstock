@@ -1,4 +1,4 @@
-{% set version = '2.1.0' %}
+{% set version = "2.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/FWDselect_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/FWDselect/FWDselect_{{ version }}.tar.gz
-  sha256: e77313b3066806333edec3904d05e4fd51b596737edc337ba4019ecf609d1070
+  sha256: 8878811c3194192af4054e7c9339ca50cee26c0e6c4364fe3fcc0e959e0f9a43
 
 build:
-  number: 1008
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -39,9 +39,7 @@ test:
 about:
   home: http://cran.r-project.org/package=FWDselect
   license: MIT
-  summary: A simple method to select the best model or best subset of variables using different
-    types of data (binary, Gaussian or Poisson) and applying it in different contexts
-    (parametric or non-parametric).
+  summary: A simple method to select the best model or best subset of variables using different types of data (binary, Gaussian or Poisson) and applying it in different contexts (parametric or non-parametric).
   license_family: MIT
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
